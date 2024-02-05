@@ -1,11 +1,12 @@
 import { Container, Form, Row, Col } from "react-bootstrap";
 import ProductCard from "./ProductCard";
 import "./Products.scss";
-import { products, categories } from "../../helper/data";
+// import { products, categories } from "../../helper/data";
 import { Header } from "../header/Header";
 import { useState } from 'react'
 
-const ProductsList = ({ products }) => {
+const ProductsList = ({ products, categoriem, setCategoriem }) => {
+  console.log(categoriem)
   console.log(products)
 
 
@@ -15,8 +16,8 @@ const ProductsList = ({ products }) => {
     setTake(e.target.value)
     console.log(setTake)
   }
-  const filteredData = products.filter((item) => item.title.toLowerCase().includes(take.toLowerCase().trim()))
-
+  //const filteredData = products.filter((item) => item.title.toLowerCase().includes(take.toLowerCase().trim()))
+  const filteredData = categoriem.filter((item) => item.title.toLowerCase().includes(take.toLowerCase().trim()))
   return (
     <>
       {/* <Header /> */}

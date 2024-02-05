@@ -1,13 +1,11 @@
 import React from "react";
-import { Button, Container, NavItem, Stack } from "react-bootstrap";
-// import { products, categories } from "../../helper/data";
+import { Button, Container, Stack } from "react-bootstrap";
 import "./Header.scss";
-import { useState } from 'react'
+import { useState } from 'react';
 
 
-export const Header = ({ categories, products }) => {
+export const Header = ({ categories, products, categoriem, setCategoriem }) => {
   // console.log(products, categories)
-  const [categoriem, setCategoriem] = useState([])
   const ALL = "all"
   const MAN = "men's clothing"
   const WOMAN = "women's clothing"
@@ -15,35 +13,33 @@ export const Header = ({ categories, products }) => {
   const JEW = "jewelery"
 
   const handleClick = (item) => {
-    console.log('click')
     console.log(item)
     if (item === ALL) {
       setCategoriem(products)
-      return categoriem
+      console.log(categoriem)
     } else if (item === MAN) {
-      const filteredCategoryMan = products.filter(item => item.category === MAN)
-      console.log(filteredCategoryMan)
-      setCategoriem(filteredCategoryMan)
+      const filteredCategory = products.filter(item => item.category === MAN)
+      console.log(filteredCategory)
+      setCategoriem(filteredCategory)
       console.log(categoriem)
     } else if (item === WOMAN) {
-      const filteredCategoryWoman = products.filter(item => item.category === WOMAN)
-      console.log(filteredCategoryWoman)
-      setCategoriem(filteredCategoryWoman)
+      const filteredCategory = products.filter(item => item.category === WOMAN)
+      console.log(filteredCategory)
+      setCategoriem(filteredCategory)
       console.log(categoriem)
     } else if (item === ELCTR) {
-      const filteredCategoryElctr = products.filter(item => item.category === ELCTR)
-      console.log(filteredCategoryElctr)
-      setCategoriem(filteredCategoryElctr)
+      const filteredCategory = products.filter(item => item.category === ELCTR)
+      console.log(filteredCategory)
+      setCategoriem(filteredCategory)
       console.log(categoriem)
     } else {
-      const filteredCategoryJew = products.filter(item => item.category === JEW)
-      console.log(filteredCategoryJew)
-      setCategoriem(filteredCategoryJew)
+      const filteredCategory = products.filter(item => item.category === JEW)
+      console.log(filteredCategory)
+      setCategoriem(filteredCategory)
       console.log(categoriem)
     }
 
   }
-
 
   return (
     <Container className="header">
@@ -59,7 +55,6 @@ export const Header = ({ categories, products }) => {
               <button onClick={() => handleClick(item)}>{item.toUpperCase()}</button>
             </div>
           ))}
-
         </>
       </Stack>
     </Container>
