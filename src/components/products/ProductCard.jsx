@@ -9,7 +9,6 @@ const ProductCard = ({ title, image, price }) => {
 
   const handleHeart = () => {
     setColor('red')
-    console.log(color)
   }
 
   return (

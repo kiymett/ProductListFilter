@@ -5,16 +5,11 @@ import "./Products.scss";
 import { Header } from "../header/Header";
 import { useState } from 'react'
 
-const ProductsList = ({ products, categoriem, setCategoriem }) => {
-  console.log(categoriem)
-  console.log(products)
-
+const ProductsList = ({ products, categoriem }) => {
 
   const [take, setTake] = useState("")
-  //console.log(take)
   const handleChange = (e) => {
     setTake(e.target.value)
-    console.log(setTake)
   }
   //const filteredData = products.filter((item) => item.title.toLowerCase().includes(take.toLowerCase().trim()))
   const filteredData = categoriem.filter((item) => item.title.toLowerCase().includes(take.toLowerCase().trim()))
